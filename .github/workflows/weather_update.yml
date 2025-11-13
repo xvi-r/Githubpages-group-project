@@ -1,1 +1,38 @@
+name: Scheduled Weather Data Generator
 
+on:
+  schedule:
+    - cron: '*/2 * * * *' 
+  workflow_dispatch:
+
+jobs:
+  update-weather:
+    if: github.ref == 'refs/heads/main' 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.ref }} 
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Weather Script and Generate HTML
+        env:
+          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+          TOWN_LOCATIONS_JSON: ${{ secrets.TOWN_LOCATIONS_JSON }}
+        run: python weather_script.py
+
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: '🤖 Automated weather update for all towns'
+          files: 'docs/weather_update.html'
