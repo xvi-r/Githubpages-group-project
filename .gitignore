@@ -1,0 +1,11 @@
+# .gitignore file content
+
+# Log files
+*.log
+
+# Dependency directories
+node_modules/
+venv/
+
+# ENVIRONMENT AND SECRETS
+.env
