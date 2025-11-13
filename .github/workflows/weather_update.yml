@@ -29,10 +29,10 @@ jobs:
         env:
           WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
           TOWN_LOCATIONS_JSON: ${{ secrets.TOWN_LOCATIONS_JSON }}
-        run: python weather_script.py
+        run: python weatherAPI.py
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: '🤖 Automated weather update for all towns'
+          commit_message: 'Automated weather update for all towns'
           files: 'docs/weather_update.html'
