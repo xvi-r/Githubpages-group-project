@@ -4,6 +4,8 @@ from datetime import datetime
 import random
 import json
 
+OUTPUT_FILE = "docs/weather_update.html"
+
 #Para sacar el diccionario del .env
 location_string = os.environ.get("TOWN_LOCATIONS_JSON")
 final_locations = {}
@@ -15,12 +17,11 @@ if location_string:
     final_locations = {
         town: tuple(coords) 
         for town, coords in location_dict.items()
-    }
+    } 
 #-----------------
 #---WEATHER API---
 #-----------------
 def getWeather(town):
-    global final_locations
     API_KEY = os.environ.get("WEATHER_API_KEY")
 
     #LAT y LON
@@ -47,16 +48,30 @@ def getWeather(town):
         case "Clear":
             weatherType+= " ☀️"
 
-    #print(response)
-    print(f"Localidad: {town}")
-    print(f"Date: {datetime.now().strftime("%A %B %Y")}")
-    print(f"Time: {datetime.now().strftime("%H:%M")}")
-    print("--------------------")
-    print(f"Temperature: {temperature}°C")
-    print(f"Weather: {weatherType}")
-    print(f"Feels Like: {feelsLike}°C")
-    print(f"Humidity: {humidity}%")
+    html_content = f"""
+    ----------------
+    Ciudad {town}
+    ----------------
+    <div style="font-family: Arial, sans-serif; padding: 15px; border: 1px solid #ccc; max-width: 300px;">
+        <h3>Tiempo en {town}</h3>
+        <p><strong>Fecha:</strong> {datetime.now().strftime("%d/%m/%Y")}</p>
+        <p><strong>Hora (UTC):</strong> {datetime.now().strftime("%H:%M:%S")}</p>
+        <hr>
+        <p><strong>Temperatura:</strong> {temperature}°C</p>
+        <p><strong>Sensación Térmica:</strong> {feelsLike}°C</p>
+        <p><strong>Condición:</strong> {weatherType}</p>
+        <p><strong>Humedad:</strong> {humidity}%</p>
+    </div>
+    """
+    return html_content
 
-for town in final_locations:
-    getWeather(town)
-    print()
+def updateWeatherPage():
+    htmlTownContent = ""
+    for town in final_locations:
+            htmlTownContent += getWeather(town)
+    
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+         f.write(htmlTownContent)
+
+
+updateWeatherPage()
