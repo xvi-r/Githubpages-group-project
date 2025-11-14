@@ -3,7 +3,7 @@ name: Scheduled Weather Data Generator
 on:
   schedule:
     # Runs reliably every 5 minutes (shortest interval allowed by GitHub)
-    - cron: '*/5 * * * *' 
+    - cron: '*/60 * * * *' 
   workflow_dispatch:
 
 jobs:
