@@ -34,9 +34,9 @@
 
                         <h6>Actividades Recomendadas</h6>
                         <ul class="list-unstyled">
-                            <li>Visitar la Catedral (La Seu) - <a href="#" target="_blank">Reservar</a></li>
-                            <li>Pasear por el casco antiguo - <a href="#" target="_blank">Más info</a></li>
-                            <li>Castillo de Bellver - <a href="#" target="_blank">Comprar tickets</a></li>
+                            <li>Visitar la Catedral (La Seu) - <a href="https://catedraldemallorca.entradasdemuseos.com/" target="_blank">Comprar entradas</a></li>
+                            <li>Pasear por el casco antiguo - <a href="https://mallorcapremiumtours.com/visitas-guiadas-palma/descubre-el-casco-antiguo-de-palma/" target="_blank">Más info</a></li>
+                            <li>Castillo de Bellver - <a href="https://castelldebellver.palma.es/visita" target="_blank">Info</a></li>
                         </ul>
                     </div>
                 </div>
@@ -60,8 +60,28 @@
 
                         <h6>Actividades Recomendadas</h6>
                         <ul class="list-unstyled">
-                            <li>Visitar la Real Cartuja - <a href="#" target="_blank">Tickets</a></li>
-                            <li>Probar la Coca de Patata - <a href="#" target="_blank">Ver cafeterías</a></li>
+                            <li>Visitar la Real Cartuja - <a href="https://cartoixadevalldemossa.com/en/tickets/" target="_blank">Tickets</a></li>
+                            <li>Probar coca de patata</li>
+                            <select class="form-select" onchange="irAEnlace(this)">
+                                <option value="" disabled selected>Elige una cafetería...</option>
+                                <option value="https://maps.app.goo.gl/DHPNW9U77XHMpXSDA">Cafetería 1 Ca'n Molinas</option>
+                                <option value="https://maps.app.goo.gl/pkWiduokAn747jjd6">Cafetería 2 Sa Fagonya</option>
+                                <option value="https://maps.app.goo.gl/2jAJVKeq6x1PoD8J7">Cafetería 3 Cafe Can Berenars</option>
+                                <script>
+  function irAEnlace(menu) {
+    const url = menu.value;
+    
+    
+    if (url) {
+      
+      window.open(url, '_blank');
+      
+      
+      menu.selectedIndex = 0;
+    }
+  }
+</script>
+        </select>
                             <li>Mirador de Sa Foradada - <a href="#" target="_blank">Más info</a></li>
                         </ul>
                     </div>
