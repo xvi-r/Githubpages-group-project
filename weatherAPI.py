@@ -68,10 +68,10 @@ def getWeather(town):
 def updateWeatherPage():
     htmlTownContent = ""
     for town in final_locations:
+            htmlTownContent = ""
             htmlTownContent += getWeather(town)
-    
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-         f.write(htmlTownContent)
+            with open(f"docs/{town}.html", "w", encoding="utf-8") as f:
+                f.write(htmlTownContent)
 
 
 updateWeatherPage()
