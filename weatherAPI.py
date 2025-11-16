@@ -49,19 +49,76 @@ def getWeather(town):
             weatherType+= " ☀️"
 
     html_content = f"""
-    ----------------
-    Ciudad {town}
-    ----------------
-    <div style="font-family: Arial, sans-serif; padding: 15px; border: 1px solid #ccc; max-width: 300px;">
-        <h3>Tiempo en {town}</h3>
-        <p><strong>Fecha:</strong> {datetime.now().strftime("%d/%m/%Y")}</p>
-        <p><strong>Hora (UTC):</strong> {datetime.now().strftime("%H:%M:%S")}</p>
-        <hr>
-        <p><strong>Temperatura:</strong> {temperature}°C</p>
-        <p><strong>Sensación Térmica:</strong> {feelsLike}°C</p>
-        <p><strong>Condición:</strong> {weatherType}</p>
-        <p><strong>Humedad:</strong> {humidity}%</p>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiempo en {town}</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+          rel="stylesheet" crossorigin="anonymous">
+
+    <style>
+        .weather-card {{
+            max-width: 360px;
+        }}
+    </style>
+</head>
+<body class="bg-light">
+
+    <div class="container py-4">
+        <div class="weather-card mx-auto">
+            
+            <div class="card shadow border-0 rounded-3">
+                <div class="card-body p-4">
+
+                    <h3 class="h4 card-title fw-bold text-primary mb-3">
+                        Tiempo en {town}
+                    </h3>
+
+                    <hr class="mt-0 mb-3">
+
+                    <div class="row g-2 mb-3">
+                        <div class="col-6">
+                            <p class="mb-0 text-muted small">Temperatura:</p>
+                            <p class="mb-0 fs-5 fw-bold">{temperature}°C</p>
+                        </div>
+
+                        <div class="col-6">
+                            <p class="mb-0 text-muted small">Sensación Térmica:</p>
+                            <p class="mb-0 fs-5 fw-bold text-secondary">{feelsLike}°C</p>
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <p class="mb-0 fw-semibold text-success">
+                                Condición: {weatherType}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center border-top pt-2">
+                        <p class="mb-0 small text-muted">
+                            <span class="fw-bold">Humedad:</span> {humidity}%
+                        </p>
+
+                        <p class="mb-0 small text-end text-secondary" style="font-size: 0.75rem;">
+                            <span class="d-block">Fecha: {datetime.now().strftime("%d/%m/%Y")}</span>
+                            <span class="d-block">Hora (UTC): {datetime.now().strftime("%H:%M:%S")}</span>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
+</body>
+</html>
+
     """
     return html_content
 
