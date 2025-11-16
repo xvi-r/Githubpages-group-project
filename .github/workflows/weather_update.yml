@@ -2,43 +2,34 @@ name: Scheduled Weather Data Generator
 
 on:
   schedule:
-    # Runs reliably every 5 minutes (shortest interval allowed by GitHub)
-    - cron: '*/60 * * * *' 
+    - cron: '*/30 * * * *' # every half hour
   workflow_dispatch:
 
 jobs:
   update-weather:
-    # CRITICAL FIX: Grants the workflow permission to commit changes to the repo
     permissions:
       contents: write 
-    
-    if: github.ref == 'refs/heads/main' 
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          ref: ${{ github.ref }} 
+          ref: ${{ github.ref }}
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: pip install requests
+      - run: pip install requests
 
-      - name: Run Weather Script and Generate HTML
+      - run: python weatherAPI.py
         env:
           WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
           TOWN_LOCATIONS_JSON: ${{ secrets.TOWN_LOCATIONS_JSON }}
-        # Runs the script located in the repository root
-        run: python weatherAPI.py 
 
-      - name: Commit and Push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'Automated weather update for all towns'
-          file_pattern: 'docs/weather_update.html'
+          commit_message: 'Automated weather update'
+          file_pattern: 'docs/*.html'
