@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Tiempo en Mallorca</title>
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4">El Tiempo en Mallorca</h1>
+        
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Palma de Mallorca</h5>
+                        <div class="weather-info my-3 p-3 bg-light rounded">
+                            <p class="mb-0"><strong>Temp:</strong> --°C</p>
+                            <p class="mb-0"><strong>Estado:</strong> --------</p>
+                        </div>
+                        <h6>Mapa de Ubicación</h6>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49215.1769871101!2d2.607301077593635!3d39.58021469550388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12979260c1116671%3A0x402018631e801d0!2sPalma%2C%20Illes%20Balears!5e0!3m2!1ses!2ses!4v1731616056637!5m2!1ses!2ses" width="385" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <a href="https://maps.app.goo.gl/HXt1Y4HSXQCFp76z7" target="_blank" class="btn btn-outline-primary btn-sm mt-2 mb-3">Cómo llegar</a>
+                        <h6>Actividades Recomendadas</h6>
+                        <ul class="list-unstyled">
+                            <li>Visitar la Catedral (La Seu) - <a href="https://catedraldemallorca.entradasdemuseos.com/" target="_blank">Comprar entradas</a></li>
+                            <li>Pasear por el casco antiguo - <a href="https://mallorcapremiumtours.com/visitas-guiadas-palma/descubre-el-casco-antiguo-de-palma/" target="_blank">Más info</a></li>
+                            <li>Castillo de Bellver - <a href="https://castelldebellver.palma.es/visita" target="_blank">Info</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Valldemossa</h5>
+                        <div class="weather-info my-3 p-3 bg-light rounded">
+                            <p class="mb-0"><strong>Temp:</strong> --°C</p>
+                            <p class="mb-0"><strong>Estado:</strong> --------</p>
+                        </div>
+                        <h6>Mapa de Ubicación</h6>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12277.080729184761!2d2.602557889721937!3d39.71111039658971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1297ee03ba8ac6ff%3A0x924852e78b96123e!2s07170%20Valldemossa%2C%20Illes%20Balears!5e0!3m2!1ses-419!2ses!4v1763145738989!5m2!1ses-419!2ses" width="385" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <a href="https://maps.app.goo.gl/hMDaWVGkHdLQeuYX9" target="_blank" class="btn btn-outline-primary btn-sm mt-2 mb-3">Cómo llegar</a>
+                        <h6>Actividades Recomendadas</h6>
+                        <ul class="list-unstyled">
+                            <li>Visitar la Real Cartuja - <a href="https://cartoixadevalldemossa.com/en/tickets/" target="_blank">Tickets</a></li>
+                            
+                            <li>
+                                Probar coca de patata - 
+                                <select class="form-select" onchange="irAEnlace(this)">
+                                    <option value="" disabled selected>Elige una cafetería...</option>
+                                    <option value="https://maps.app.goo.gl/DHPNW9U77XHMpXSDA">Cafetería 1 Ca'n Molinas</option>
+                                    <option value="https://maps.app.goo.gl/pkWiduokAn747jjd6">Cafetería 2 Sa Fagonya</option>
+                                    <option value="https://maps.app.goo.gl/2jAJVKeq6x1PoD8J7">Cafetería 3 Cafe Can Berenars</option>
+                                </select>
+                            </li>
+
+                            <li>Mirador de Sa Foradada - <a href="#" target="_blank">Más info</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Sóller</h5>
+                        <div class="weather-info my-3 p-3 bg-light rounded">
+                            <p class="mb-0"><strong>Temp:</strong> --°C</p>
+                            <p class="mb-0"><strong>Estado:</strong> --------</p>
+                        </div>
+                        <h6>Mapa de Ubicación</h6>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12267.231473096661!2d2.7153932499999995!3d39.766422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1297e8bf0f60ed33%3A0xb0011fe8275e422e!2s07100%20S%C3%B3ller%2C%20Illes%20Balears!5e0!3m2!1ses-419!2ses!4v1763151780620!5m2!1ses-419!2ses" width="385" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <a href="https://maps.app.goo.gl/26YNQX4Ey3GA7hvZ9" target="_blank" class="btn btn-outline-primary btn-sm mt-2 mb-3">Cómo llegar</a>
+                        <h6>Actividades Recomendadas</h6>
+                        <ul class="list-unstyled">
+                            <li>Tren de Sóller - <a href="https://trendesoller.com/horarios" target="_blank">Horarios</a></li>
+                            <li>Tranvía al Puerto de Sóller - <a href="https://trendesoller.com/billete-de-tren" target="_blank">Más info</a></li>
+                            <li>Plaza de la Constitución - <a href="https://maps.app.goo.gl/hvSs2JkQBDQyUj9K6" target="_blank">Ver más</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Pollença</h5>
+                        <div class="weather-info my-3 p-3 bg-light rounded">
+                            <p class="mb-0"><strong>Temp:</strong> --°C</p>
+                            <p class="mb-0"><strong>Estado:</strong> --------</p>
+                        </div>
+                        <h6>Mapa de Ubicación</h6>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6123.810919445467!2d3.0058826908256653!3d39.876355526201486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1297d6a0db5e5103%3A0x2aec5ed1cb734537!2s07460%20Pollen%C3%A7a%2C%20Illes%20Balears!5e0!3m2!1ses-419!2ses!4v1763152359067!5m2!1ses-419!2ses" width="385" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <a href="https://maps.app.goo.gl/Qr29kqnhHtupRmSB6" target="_blank" class="btn btn-outline-primary btn-sm mt-2 mb-3">Cómo llegar</a>
+                        <h6>Actividades Recomendadas</h6>
+                        <ul class="list-unstyled">
+                            <li>Subir al Calvari - <a href="https://tripkay.com/destination-guides/puntos-interes/el-calvario/" target="_blank">Más info</a></li>
+                            <li>Visitar el Puente Romano - <a href="https://www.pollensa.com/es/" target="_blank">Ver más</a></li>
+                            <li>Mercado de Pollença (Domingos) - <a href="https://www.pollensa.com/es/que-hacer/mercados" target="_blank">Info</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Alcúdia</h5>
+                        <div class="weather-info my-3 p-3 bg-light rounded">
+                            <p class="mb-0"><strong>Temp:</strong> --°C</p>
+                            <p class="mb-0"><strong>Estado:</strong> --------</p>
+                        </div>
+                        <h6>Mapa de Ubicación</h6>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6125.890541066617!2d3.1196888470103095!3d39.853059522586356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12962c9c66faf103%3A0x1f82e40f9f2a7bd0!2s07400%20Alc%C3%BAdia%2C%20Illes%20Balears!5e0!3m2!1ses-419!2ses!4v1763152470823!5m2!1ses-419!2ses" width="385" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
+                        <a href="https://maps.app.goo.gl/6Z9LyAkDwZCw3jLA9" target="_blank" class="btn btn-outline-primary btn-sm mt-2 mb-3">Cómo llegar</a>
+                        <h6>Actividades Recomendadas</h6>
+                        <ul class="list-unstyled">
+                            <li>Murallas Medievales - <a href="https://www.holamallorca.com/es/mallorca/guia-de-viaje/lugares-de-interes/historicos-edificios/muralladealcudia.htm" target="_blank">Más info</a></li>
+                            <li>Playa de Alcúdia - <a href="https://maps.app.goo.gl/PNRbAqccpLAFphg58" target="_blank">Ver más</a></li>
+                            <li>Ruinas Romanas de Pollentia - <a href="https://www.alcudia.net/Pollentia/es" target="_blank">Tickets</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Manacor</h5>
+                        <div class="weather-info my-3 p-3 bg-light rounded">
+                            <p class="mb-0"><strong>Temp:</strong> --°C</p>
+                            <p class="mb-0"><strong>Estado:</strong> --------</p>
+                        </div>
+                        <h6>Mapa de Ubicación</h6>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12302.162457634133!2d3.195996320496701!3d39.56996473607306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x129649a6449871cd%3A0xde82d034b3075dd3!2s07500%20Manacor%2C%20Illes%20Balears!5e0!3m2!1ses-419!2ses!4v1763152649243!5m2!1ses-419!2ses" width="385" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
+                        <a href="https://maps.app.goo.gl/7ZBywsaCkfaCM7Lv5" target="_blank" class="btn btn-outline-primary btn-sm mt-2 mb-3">Cómo llegar</a>
+                        <h6>Actividades Recomendadas</h6>
+                        <ul class="list-unstyled">
+                            <li>Cuevas del Drach - <a href="https://www.cuevasdeldrach.com/venta-entradas.php" target="_blank">Reservar</a></li>
+                            <li>Rafa Nadal Museum - <a href="https://www.rafanadalmuseum.com/" target="_blank">Comprar tickets</a></li>
+                            <li>Fábrica de Perlas Majorica - <a href="https://www.perlart.net/majorca-pearl-factory-museum/" target="_blank">Visitar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Inca</h5>
+                        <div class="weather-info my-3 p-3 bg-light rounded">
+                            <p class="mb-0"><strong>Temp:</strong> --°C</p>
+                            <p class="mb-0"><strong>Estado:</strong> --------</p>
+                        </div>
+                        <h6>Mapa de Ubicación</h6>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12275.447990328585!2d2.8990386205858485!3d39.720283999703085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1297c5b8448645b3%3A0x840fd4f83565df24!2s07300%20Inca%2C%20Illes%20Balears!5e0!3m2!1ses-419!2ses!4v1763152753786!5m2!1ses-419!2ses" width="385" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
+                        <a href="https://maps.app.goo.gl/xKJcXrBY5oeYWsi56" target="_blank" class="btn btn-outline-primary btn-sm mt-2 mb-3">Cómo llegar</a>
+                        <h6>Actividades Recomendadas</h6>
+                        <ul class="list-unstyled">
+                            <li>Mercado de Inca (Jueves) - <a href="https://mercatdinca.com/" target="_blank">Más info</a></li>
+                            <li>Monasterio de Lluc (cercano) - <a href="https://www.lluc.net/es/" target="_blank">Visitar</a></li>
+                            
+                            <li>
+                                Fábricas de Piel (Camper, Lottusse) -
+                                <select class="form-select" onchange="irAEnlace(this)">
+                                    <option value="" disabled selected>Elige una tienda...</option>
+                                    <option value="https://maps.app.goo.gl/s7XBCUPh8xQhtG4y6">Greca artesanos del cuero</option>
+                                    <option value="https://maps.app.goo.gl/q2RZkANuiSHhnzjPA">Fabrica Buades</option>
+                                    <option value="https://maps.app.goo.gl/R2d9epBs9M1QvssE6">Heitorn - Leather Jackets</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Artà</h5>
+                        <div class="weather-info my-3 p-3 bg-light rounded">
+                            <p class="mb-0"><strong>Temp:</strong> --°C</p>
+                            <p class="mb-0"><strong>Estado:</strong> --------</p>
+                        </div>
+                        <h6>Mapa de Ubicación</h6>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6140.155268471647!2d3.3441143969866287!3d39.69295839188294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12963c1b3400d0d5%3A0x3f282b8eba72fa94!2s07570%20Art%C3%A1%2C%20Illes%20Balears!5e0!3m2!1ses-419!2ses!4v1763152851697!5m2!1ses-419!2ses" width="385" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
+                        <a href="https://maps.app.goo.gl/c94dpifQLPRUK5QQ7" target="_blank" class="btn btn-outline-primary btn-sm mt-2 mb-3">Cómo llegar</a>
+                        <h6>Actividades Recomendadas</h6>
+                        <ul class="list-unstyled">
+                            <li>Santuari de Sant Salvador - <a href="https://www.tripadvisor.es/Attraction_Review-g616236-d7159012-Reviews-Santuari_de_Sant_Salvador-Arta_Majorca_Balearic_Islands.html" target="_blank">Más info</a></li>
+                            <li>Cuevas de Artà - <a href="https://www.cuevasdearta.com/es/" target="_blank">Tickets</a></li>
+                            <li>Parque Natural de Llevant - <a href="https://www.caib.es/sites/espaisnaturalsprotegits/ca/parque_natural_de_la_peninsula_de_levante/#h24sm1j1qyv4w783nj3m0s6qatovy4" target="_blank">Rutas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Llucmajor</h5>
+                        <div class="weather-info my-3 p-3 bg-light rounded">
+                            <p class="mb-0"><strong>Temp:</strong> --°C</p>
+                            <p class="mb-0"><strong>Estado:</strong> --------</p>
+                        </div>
+                        <h6>Mapa de Ubicación</h6>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12316.253265340982!2d2.8859964969566962!3d39.49048486619933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1297bb076b7563c5%3A0xc76e45725e237545!2s07620%20Llucmajor%2C%20Illes%20Balears!5e0!3m2!1ses-419!2ses!4v1763152943781!5m2!1ses-419!2ses" width="385" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
+                        <a href="https://maps.app.goo.gl/S7nrEiLqspE895kr6" target="_blank" class="btn btn-outline-primary btn-sm mt-2 mb-3">Cómo llegar</a>
+                        <h6>Actividades Recomendadas</h6>
+                        <ul class="list-unstyled">
+                            <li>Mercado (Mié, Vie, Dom) - <a href="https://mercadillos.org/mercadillo-llucmajor" target="_blank">Más info</a></li>
+                            <li>Puig de Randa - <a href="https://caminandopormallorca.es/2024/02/08/puig-de-randa-desde-randa/" target="_blank">Cómo subir</a></li>
+                            <li>Faro del cap blanc - <a href="https://farsdebalears.com/es/faro/faro-del-cap-blanc-cabo-blanco" target="_blank">Ver más</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Calvià</h5>
+                        <div class="weather-info my-3 p-3 bg-light rounded">
+                            <p class="mb-0"><strong>Temp:</strong> --°C</p>
+                            <p class="mb-0"><strong>Estado:</strong> --------</p>
+                        </div>
+                        <h6>Mapa de Ubicación</h6>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6151.745321835206!2d2.500571571851415!3d39.56247873809197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12978bb4359336d1%3A0x1d5f69bc3c2bdace!2s07184%20Calvi%C3%A1%2C%20Illes%20Balears!5e0!3m2!1ses-419!2ses!4v1763153037381!5m2!1ses-419!2ses" width="385" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
+                        <a href="https://maps.app.goo.gl/WVys5kNV1ki8RaQj7" target="_blank" class="btn btn-outline-primary btn-sm mt-2 mb-3">Cómo llegar</a>
+                        <h6>Actividades Recomendadas</h6>
+                        <ul class="list-unstyled">
+                            <li>Finca Galatzó - <a href="https://es.wikiloc.com/rutas-senderismo/finca-galatzo-calvia-285845" target="_blank">Como subir</a></li>
+                            <li>Visitar Es Capdella(Pueblo cercano) - <a href="https://maps.app.goo.gl/Tmi14PXeo1jk1pxw9" target="_blank">Ver ubicación</a></li>
+                            <li>Molí des Castellet - <a href="https://maps.app.goo.gl/cGKAL3Wvptr8xEuX7" target="_blank">Ver Ubicación</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+    </div> 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script>
+        function irAEnlace(menu) {
+            const url = menu.value;
+            if (url) {
+                window.open(url, '_blank');
+                menu.selectedIndex = 0;
+            }
+        }
+    </script>
+</body>
+</html>
